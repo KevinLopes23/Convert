@@ -1,7 +1,16 @@
+const from = DocumentTimeline.querySelector("form") 
 const amount = document.getElementById("amount");
+const currency = document.getElementById("currency");
 
 // Manipulando o input amount para receber somente números
 amount.addEventListener("input", () => {
   const hasCharactersRegex = /\D+/g;
   amount.value = amount.value.replace(hasCharactersRegex, "");
 });
+
+// Capturando o evento de submit (enviar) do formulario
+form.onsubmit = (event) => {
+    event.preventDefault();
+
+    
+}

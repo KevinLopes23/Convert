@@ -42,8 +42,16 @@ function convertCurrency(amount, price, symbol) {
     //Calcula o total
     let total = amount * price;
 
+    //Verifica se o resultado não é numero
+    if (isNaN(total)) {
+      return alert("Por favor, digite o valor corretamente para converter.");
+    }
+
+    //Formatar o valor total.
+    total = formatCurrencyBRL(total).replace("R$", "");
+
     //Exibe o resultado total
-    result.textContent = total;
+    result.textContent = `${total} Reais`;
 
     //Aplica a classe que exibe o footer com o resultado
     footer.classList.add("show-result");
